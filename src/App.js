@@ -19,12 +19,18 @@ const App = () => {
     }, []);
 
     return (
-        <div className="container mx-auto">
-            <div className="flex flex-wrap gap-4">
-                {images.map((image) => (
-                    <ImageCard key={image.id} image={image} />
-                ))}
-            </div>
+        <div className="container relative mx-auto min-h-screen">
+            {isLoading ? (
+                <h1 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-9xl">
+                    Loading...
+                </h1>
+            ) : (
+                <div className="flex flex-wrap gap-4">
+                    {images.map((image) => (
+                        <ImageCard key={image.id} image={image} />
+                    ))}
+                </div>
+            )}
         </div>
     );
 };
