@@ -20,7 +20,7 @@ const App = () => {
     }, [term]);
 
     return (
-        <div className="container relative mx-auto min-h-screen py-8">
+        <div className="container relative mx-auto min-h-screen p-4">
             <ImageSearch searchText={(text) => setTerm(text)} />
 
             {!isLoading && images.length === 0 && (
@@ -34,7 +34,7 @@ const App = () => {
                     Loading...
                 </h1>
             ) : (
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-wrap justify-center gap-4">
                     {images.map((image) => (
                         <ImageCard key={image.id} image={image} />
                     ))}
