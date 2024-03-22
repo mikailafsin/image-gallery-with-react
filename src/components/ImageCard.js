@@ -24,7 +24,7 @@ const ImageCard = ({ image }) => {
                         <span>{image.likes}</span>
                     </li>
                 </ul>
-                <div className="flex gap-1 overflow-x-auto">
+                <div className="flex flex-wrap gap-2">
                     {tags.map((tag, index) => (
                         <ImageTag key={index} tag={tag} />
                     ))}
